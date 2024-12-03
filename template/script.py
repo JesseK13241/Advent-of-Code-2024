@@ -1,14 +1,14 @@
 #
 
 
-def first_challenge(filename):
+def first_challenge(lines):
     for line in lines:
         pass
 
     return 0
 
 
-def second_challenge(filename):
+def second_challenge(lines):
     for line in lines:
         pass
 
