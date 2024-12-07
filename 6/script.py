@@ -35,7 +35,7 @@ def game_step(lines, position, path=PATH, barrier=BARRIER, past_barriers=set()):
     # 1) Get current direction
     # 2) Replace position with path
     # 3) If barrier on front:
-    #       - Rotate 90 degrees
+    #       - Rotate 90 degrees (180 if a second barrier)
     # 4) Move forwards
     x, y = position
     direction = GUARD.index(lines[y][x])
@@ -90,12 +90,13 @@ def first_challenge(lines):
 
 
 def second_challenge(lines):
-    # You need to get the guard stuck in a loop by adding a single new obstruction. How many different positions could you choose for this obstruction?
+    # You need to get the guard stuck in a loop by adding a single new obstruction. 
+    # How many different positions could you choose for this obstruction?
 
     # IDEA:
     # Calculate path from part 1
     # For each path block, try placing a barrier
-    # Track previous 4 barrier coordinates
+    # Track the set of previous barrier coordinates + directions
     # If it doesn't change --> infinite loop
 
     game_state = [list(line) for line in lines]
